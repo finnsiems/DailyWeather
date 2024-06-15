@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/edittext_changeCity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Change City"
+        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
+        app:layout_constraintBottom_toTopOf="@id/textview_city"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_updateCity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Update"
+        app:layout_constraintBottom_toTopOf="@id/textview_city"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/edittext_changeCity"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textview_city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="City"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/textview_temp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edittext_changeCity" />
+
+    <TextView
+        android:id="@+id/textview_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cloudy"
+        app:layout_constraintBottom_toTopOf="@id/textview_tempText"
+        app:layout_constraintEnd_toStartOf="@id/imageview_weatherIcon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textview_city" />
+
+    <ImageView
+        android:id="@+id/imageview_weatherIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/textview_tempText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/textview_desc"
+        app:layout_constraintTop_toBottomOf="@id/textview_city"/>
+
+    <TextView
+        android:id="@+id/textview_tempText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Temperature:"
+        app:layout_constraintBottom_toTopOf="@id/textview_tempMax"
+        app:layout_constraintEnd_toStartOf="@id/textview_temp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textview_desc" />
+
+
+    <TextView
+        android:id="@+id/textview_temp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="23°C"
+        app:layout_constraintBottom_toTopOf="@id/textview_tempMax"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/textview_tempText"
+        app:layout_constraintTop_toBottomOf="@id/textview_desc" />
+
+
+    <TextView
+        android:id="@+id/textview_tempMaxText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Max Temperature:"
+        app:layout_constraintBottom_toTopOf="@id/textview_tempMin"
+        app:layout_constraintEnd_toStartOf="@id/textview_tempMax"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textview_temp" />
+
+    <TextView
+        android:id="@+id/textview_tempMax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="23°C"
+        app:layout_constraintBottom_toTopOf="@id/textview_tempMin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/textview_tempMaxText"
+        app:layout_constraintTop_toBottomOf="@id/textview_temp" />
+
+    <TextView
+        android:id="@+id/textview_tempMinText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Min Temperature"
+        app:layout_constraintBottom_toTopOf="@id/textview_humidityText"
+        app:layout_constraintEnd_toStartOf="@id/textview_tempMin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textview_tempMax" />
+
+    <TextView
+        android:id="@+id/textview_tempMin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="23°C"
+        app:layout_constraintBottom_toTopOf="@id/textview_humidityText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/textview_tempMinText"
+        app:layout_constraintTop_toBottomOf="@id/textview_tempMax" />
+
+    <TextView
+        android:id="@+id/textview_humidityText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Humidity:"
+        app:layout_constraintBottom_toTopOf="@id/button_update"
+        app:layout_constraintEnd_toStartOf="@id/textview_humidity"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textview_tempMinText" />
+
+    <TextView
+        android:id="@+id/textview_humidity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="100%"
+        app:layout_constraintBottom_toTopOf="@id/button_update"
+        app:layout_constraintStart_toEndOf="@id/textview_humidityText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textview_tempMinText" />
+
+
+    <Button
+        android:id="@+id/button_update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Update"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textview_humidityText" />
+</androidx.constraintlayout.widget.ConstraintLayout>

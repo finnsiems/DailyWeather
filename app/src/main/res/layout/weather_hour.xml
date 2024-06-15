@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--Card View widget-->
+<androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.androidx.com/tools"
+    android:id="@+id/cardview"
+    android:layout_width="100dp"
+    android:layout_height="wrap_content"
+    card_view:contentPadding="8dp"
+    card_view:cardCornerRadius="8dp"
+    card_view:cardElevation="8dp"
+    card_view:cardBackgroundColor="@color/black"
+    android:layout_margin="1dp">
+
+    <LinearLayout
+        android:id="@+id/linear"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="0dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        >
+
+
+    <!--Text View over Card View-->
+    <TextView
+        android:id="@+id/textview_hourly_time"
+        android:text="18 Uhr"
+        android:layout_gravity="center"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:textSize="15sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#fff"/>
+
+        <TextView
+            android:id="@+id/textview_hourly_desc"
+            android:text="Sunny"
+            android:layout_gravity="center"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:textSize="15sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#fff"/>
+
+    <TextView
+        android:id="@+id/textview_hourly_temp"
+        android:text="20°C"
+        android:layout_gravity="center"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:textSize="15sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#fff"/>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FirstFragment">
+
+    <TextView
+        android:id="@+id/textview_city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="City"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@id/LinearLayout_temp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/LinearLayout_temp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/textview_city"
+        app:layout_constraintBottom_toTopOf="@id/LinearLayout_extras"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" >
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/LinearLayout_tempFeel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/textview_city"
+        app:layout_constraintBottom_toTopOf="@id/LinearLayout_extras"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" >
+        <TextView
+            android:id="@+id/textview_temp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="23°C"
+            android:textSize="60sp"
+            app:layout_constraintBottom_toTopOf="@id/button_update"
+            app:layout_constraintEnd_toStartOf="@id/LinearLayout_temMinMax"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textview_city" />
+
+        <TextView
+            android:id="@+id/textview_feelsLikeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Feels like: 25°C"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@id/button_update"
+            app:layout_constraintStart_toStartOf="parent" />
+    </LinearLayout>
+
+
+
+
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@+id/LinearLayout_temMinMax"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10sp"
+            app:layout_constraintTop_toBottomOf="@id/textview_city"
+            app:layout_constraintBottom_toTopOf="@id/button_update"
+            app:layout_constraintStart_toStartOf="@id/textview_temp"
+            app:layout_constraintEnd_toEndOf="parent" >
+
+            <TextView
+                android:id="@+id/textview_tempMax"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="30°C"
+                android:textSize="30sp"
+                app:layout_constraintBottom_toTopOf="@id/textview_tempMin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/textview_temp"
+                app:layout_constraintTop_toBottomOf="@id/textview_city" />
+
+            <TextView
+                android:id="@+id/textview_tempMin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="18°C"
+                android:textSize="30sp"
+                app:layout_constraintBottom_toTopOf="@id/button_update"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/textview_temp"
+                app:layout_constraintTop_toBottomOf="@id/textview_tempMax" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/LinearLayout_extras"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/LinearLayout_temp"
+        app:layout_constraintBottom_toTopOf="@id/button_update"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" >
+
+        <TextView
+            android:id="@+id/textview_humidityText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Humidity:"
+            app:layout_constraintBottom_toTopOf="@id/button_update"
+            app:layout_constraintEnd_toStartOf="@id/textview_humidity"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/textview_humidity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="100%"
+            android:layout_marginStart="10sp"
+            app:layout_constraintBottom_toTopOf="@id/button_update"
+            app:layout_constraintStart_toEndOf="@id/textview_humidityText"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/button_update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Update"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/LinearLayout_temp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
