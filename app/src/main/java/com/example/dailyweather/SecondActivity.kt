@@ -2,12 +2,11 @@ package com.example.dailyweather
 
 //import jdk.nashorn.internal.parser.JSONParser
 import android.content.Context
-import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.AnimationDrawable
 import android.os.Bundle
+import android.os.Looper
 import android.util.Log
-import android.view.MotionEvent
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -16,6 +15,7 @@ import com.example.dailyweather.databinding.ActivitySecondBinding
 import org.json.JSONArray
 import org.json.JSONObject
 import java.io.BufferedReader
+import java.io.FileNotFoundException
 import java.io.InputStreamReader
 import java.net.URL
 import java.nio.charset.Charset
@@ -163,7 +163,7 @@ class SecondActivity : AppCompatActivity() {
                             var weather = jsonListHour["weather"]
                             var jsonWeatherArray = weather as JSONArray
                             var jsonWeather = jsonWeatherArray[0] as JSONObject
-                            var hourDesc = jsonWeather["description"].toString()
+                            var hourDesc = jsonWeather["main"].toString()
                             hourDescList.add(hourDesc)
 
                             Log.d("NoteThing", "HourTest: " + hourTemp + " " + time)
@@ -184,8 +184,18 @@ class SecondActivity : AppCompatActivity() {
                     }
                 }
 
-                }catch (e:Exception){
+                }catch (e:FileNotFoundException){
                     Log.d("Notething", "Exeption: " + e)
+
+                this.runOnUiThread(Runnable {
+                    Toast.makeText(
+                        this,
+                        "City doesn't exist",
+                        Toast.LENGTH_LONG
+                    ).show()
+                })
+                }catch (e:Exception){
+                Log.d("Notething", "Exeption: " + e)
                 }
 
 
